@@ -1,0 +1,28 @@
+<template name="group">
+  <div class="jumbotron">
+    <h1>Group Creater</h1>
+    <p>test</p>
+    <p>Use this page when you meet a new group of people. If everyone has/creates a profile on this site, you can see if anyone has listed the same interest as you!</p>
+  </div>
+  {{#if currentUser}}
+    <p>Type in the name of a person you would like to add to the group. </p>
+    <input type="text"  class="js-chatinput" >
+    <br>
+    <button class="btn btn-info btn-large js-chatsubmit">Add to Group</button>
+    <hr>
+    <ul>
+      <li>Here you would see a list the profile names of the people you entered into the group.</li>
+    </ul>
+    <input type="checkbox" id="save" name="group-save" value="coding">
+    <label for="save">Would you like to save this group for later?</label>
+    <p>If you would like to save this group, put a name for it here:</p>
+    <input type="text"  class="js-chatinput" >
+    <br>
+    <button class="btn btn-info btn-large js-chatsubmit">Add to Group</button>
+    <br>
+    <button class="btn btn-info btn-large js-chatsubmit">Let's see if anyone has anything in common with you!</button>
+    <span class="glyphicon glyphicon-search"></span>
+  {{else}}
+    <h2>You must logged in to create a group!</h2>
+  {{/if}}
+</template>

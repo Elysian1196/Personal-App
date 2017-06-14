@@ -1,0 +1,96 @@
+<template name="profile">
+  <div class="jumbotron">
+    <h1>Profile Page</h1>
+    <p>Edit your profile settings here. </p>
+  </div>
+  {{#if currentUser}}
+    <p>Enter your name here:</p>
+    <input type="text"  class="js-chatinput" >
+    <br>
+    <button class="btn btn-info btn-large js-chatsubmit">Submit</button>
+    <br>
+    <p>Enter a URL here to give yourself profile picture.</p>
+    <input type="text"  class="js-chatinput" >
+    <br>
+    <button class="btn btn-default btn-large js-chatsubmit">Submit</button>
+    <p></p>
+    <textarea rows="9" cols="60">
+      Here is my profile description!
+    </textarea>
+    <br>
+    <button class="btn btn-primary btn-large js-chatsubmit">Submit</button>
+    <br>
+    <p>Here are your likes:</p>
+    <ul>
+      <li>Here would be a list of your likes</li>
+    </ul>
+    <br>
+    <p>If you have more, or you wish to delete some, enter them here: </p>
+    <input type="text"  class="js-chatinput" >
+    <br>
+    <button class="btn btn-warning btn-medium js-chatsubmit">Add</button>
+    <button class="btn btn-danger btn-medium js-chatsubmit">Delete</button>
+    <br>
+    <p>Author's Note:  deMaybe when my program becomes more advanced, I can add catagories to my interests. When that happens, I can add a dropdown menu to select catagories when adding new interests, and I can use a table instead of a list for showing all of my interests.</p>
+    <p>These new features would look something like this:</p>
+    <select>
+      <option value="Game">Games</option>
+      <option value="Movie">Movies</option>
+      <option value="Sport">Sports</option>
+      <option value="Hobby">Hobbies</option>
+    </select>
+    <br>
+    <table class="table table-striped">
+    	<thead>
+    		<tr><th>Games</th><th>Movies</th><th>Sports</th><th>Hobbies</th></tr>
+    	</thead>
+      <tfoot>
+        <tr><td>Put your interests in above!</td></tr>
+      </tfoot>
+    	<tbody>
+    		<tr><td>Overwatch</td><td>The Matrix</td><td>Soccer</td><td>Kicking Ass</td></tr>
+    	</tbody>
+    </table>
+    <p>Also, since I couldn't find a use for these functions yet, but I still wanted to try and do them, here are some example functions and input types. </p>
+    <form>
+      <input type="radio" name="test" value="male" checked> This is<br>
+      <input type="radio" name="test" value="female"> A Test<br>
+      <input type="radio" name="test" value="other"> Radio Selection<br>
+    </form>
+    Test user name:<br>
+    <input type="text" name="username"><br>
+    Test password:<br>
+    <input type="password" name="psw"><br>
+    <form>
+      Birthday:
+      <input type="date" name="bday"><br>
+      Select your favorite color:
+      <input type="color" name="favcolor">
+    </form>
+    <p>Here is a test Using Blaze to create a table and list edited from the example given in about from the meteor demo:</p>
+    <table class="table table-bordered">
+    	<thead>
+    		<tr><th>Name</th><th>Email</th></tr>
+    	</thead>
+    	<tbody>
+    		{{#each person in team}}
+      		{{> teamrow t=person}}
+    		{{/each}}
+    	</tbody>
+    </table>
+    <ul>
+      {{#each person in team}}
+        <li>This should appear twice</li>
+      {{/each}}
+    </ul>
+    <p></p>
+  {{else}}
+    <h2>You must log in to see your profile. </h2>
+  {{/if}}
+</template>
+<template name="teamrow">
+   <tr>
+     <td>{{t.name}}</td>
+     <td>{{t.email}}</td>
+   </tr>
+</template>
