@@ -4,34 +4,41 @@
     <p>Edit your profile settings here. </p>
   </div>
   {{#if currentUser}}
-    <p>Enter your name here:</p>
-    <input type="text"  class="js-chatinput" >
-    <br>
-    <button class="btn btn-info btn-large js-chatsubmit">Submit</button>
-    <br>
-    <p>Enter a URL here to give yourself profile picture.</p>
-    <input type="text"  class="js-chatinput" >
-    <br>
-    <button class="btn btn-default btn-large js-chatsubmit">Submit</button>
+
+    <p>Click here to begin your profile creation or start over!</p>
+    <button class="btn btn-primary btn-large js-chatsubmit" id = "new">Let's Begin!</button>
     <p></p>
-    <textarea rows="9" cols="60">
-      Here is my profile description!
-    </textarea>
-    <br>
-    <button class="btn btn-primary btn-large js-chatsubmit">Submit</button>
-    <br>
+    <p>Profile Information:(show name, profile picture, and like list)</p>
     <p>Here are your likes:</p>
     <ul>
       <li>Here would be a list of your likes</li>
     </ul>
     <br>
-    <p>If you have more, or you wish to delete some, enter them here: </p>
-    <input type="text"  class="js-chatinput" >
+    <p>Enter your name here:</p>
+    <input type="text"  class="js-chatinput" id = "name">
     <br>
-    <button class="btn btn-warning btn-medium js-chatsubmit">Add</button>
-    <button class="btn btn-danger btn-medium js-chatsubmit">Delete</button>
+    <button class="btn btn-default btn-large js-chatsubmit" id = "name_add">Submit</button>
     <br>
-    <p>Author's Note:  deMaybe when my program becomes more advanced, I can add catagories to my interests. When that happens, I can add a dropdown menu to select catagories when adding new interests, and I can use a table instead of a list for showing all of my interests.</p>
+    <p>Enter a URL here to give yourself profile picture.</p>
+    <input type="text"  class="js-chatinput" id = "picture" >
+    <br>
+    <button class="btn btn-info btn-large js-chatsubmit" id = "picture_add">Submit</button>
+    <p></p>
+    <!--
+    <textarea rows="9" cols="60" placeholder = "Enter profile description here" id = "description"></textarea>
+    <br>
+    <button class="btn btn-primary btn-large js-chatsubmit">Submit</button>
+    <br>
+    -->
+    <p>If you wish to add or delete and likes, enter them here: </p>
+    <input type="text"  class="js-chatinput" id = "likes">
+    <br>
+    <button class="btn btn-warning btn-medium js-chatsubmit" id = "likes_add">Add</button>
+    <button class="btn btn-danger btn-medium js-chatsubmit" id = "likes_delete">Delete</button>
+    <br>
+    <p></p>
+    <!--
+    <p>Author's Note: Maybe when my program becomes more advanced, I can add catagories to my interests. When that happens, I can add a dropdown menu to select catagories when adding new interests, and I can use a table instead of a list for showing all of my interests.</p>
     <p>These new features would look something like this:</p>
     <select>
       <option value="Game">Games</option>
@@ -84,6 +91,7 @@
       {{/each}}
     </ul>
     <p></p>
+  -->
   {{else}}
     <h2>You must log in to see your profile. </h2>
   {{/if}}
