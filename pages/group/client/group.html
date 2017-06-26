@@ -18,10 +18,8 @@
     <button class="btn btn-info btn-large js-chatsubmit" id="gr_submit_2">Delete from Group</button>
     <br>
     <ul>
-      {{#each group in Group.find}}
-        {{#each member in group.members}}
-          <li>{{member}}</li>
-        {{/each}}
+      {{#each member in peoplelist}}
+        <li>{{member.name}}</li>
       {{/each}}
     </ul>
     <br>

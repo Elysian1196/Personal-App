@@ -5,5 +5,4 @@ Meteor.startup(() => {
   Profiles.remove({});  // clear the database
   Group.remove({});
   Profiles.insert({name:'Matthew', picture: 'images/Bedouin Pharah.jpg', likes: ['overwatch', 'gaming']})
-  Group.insert({members: []})
 });
