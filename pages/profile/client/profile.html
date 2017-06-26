@@ -9,17 +9,20 @@
     <button class="btn btn-primary btn-large js-chatsubmit" id = "new">Let's Begin!</button>
     <p></p>
     <p>Profile Information:(show name, profile picture, and like list)</p>
-    <p>Here are your likes:</p>
-    <ul>
-      <li>Here would be a list of your likes</li>
-    </ul>
-    <br>
-    <p>Enter your name here:</p>
+    <p>Your Name: </p>
+    {{#each member in current_profile}}
+      <p>{{member.name}}</p>
+    {{/each}}
+    <p>Change your name here:</p>
     <input type="text"  class="js-chatinput" id = "name">
     <br>
     <button class="btn btn-default btn-large js-chatsubmit" id = "name_add">Submit</button>
     <br>
-    <p>Enter a URL here to give yourself profile picture.</p>
+    <p>Your Current Profile Picture: </p>
+    {{#each member in current_profile}}
+      <p><img src = {{member.picture}} width="100%" style="width:50%;height:30%;" /></p>
+    {{/each}}
+    <p>Enter a URL here to change it.</p>
     <input type="text"  class="js-chatinput" id = "picture" >
     <br>
     <button class="btn btn-info btn-large js-chatsubmit" id = "picture_add">Submit</button>
@@ -30,7 +33,15 @@
     <button class="btn btn-primary btn-large js-chatsubmit">Submit</button>
     <br>
     -->
-    <p>If you wish to add or delete and likes, enter them here: </p>
+    <p>Here are your likes. If you don't see anything, try adding some below!</p>
+    <ul>
+      {{#each member in current_profile}}
+        {{#each like in member.likes}}
+          <li>{{like}}</li>
+        {{/each}}
+      {{/each}}
+    </ul>
+    <br>
     <input type="text"  class="js-chatinput" id = "likes">
     <br>
     <button class="btn btn-warning btn-medium js-chatsubmit" id = "likes_add">Add</button>
