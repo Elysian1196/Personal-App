@@ -8,7 +8,7 @@
     <p>Click here to begin your profile creation or start over!</p>
     <button class="btn btn-primary btn-large js-chatsubmit" id = "new">Let's Begin!</button>
     <p></p>
-    <p>Profile Information:(show name, profile picture, and like list)</p>
+    <p>Profile Information:</p>
     <p>Your Name: </p>
     {{#each member in current_profile}}
       <p>{{member.name}}</p>
@@ -47,6 +47,7 @@
     <button class="btn btn-warning btn-medium js-chatsubmit" id = "likes_add">Add</button>
     <button class="btn btn-danger btn-medium js-chatsubmit" id = "likes_delete">Delete</button>
     <br>
+    <p>Use the delete button to remove likes on your personal list.</p>
     <p></p>
     <!--
     <p>Author's Note: Maybe when my program becomes more advanced, I can add catagories to my interests. When that happens, I can add a dropdown menu to select catagories when adding new interests, and I can use a table instead of a list for showing all of my interests.</p>
