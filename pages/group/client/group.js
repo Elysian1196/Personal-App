@@ -1,11 +1,11 @@
 Template.group.helpers({
-  Grouplist() {return Group.find()},
+  peoplelist() {return Group.find()},
 })
 Template.group.events({
   'click #gr_submit_1' : function (e, instance) {
     const add = instance.$('#group_add').val();
     instance.$('#group_add').val("");
-    Group.insert({name:add});
+    Group.insert({name: add});
   },
   'click #gr_submit_2' : function (e, instance) {
     const remove = instance.$('#group_delete').val();
