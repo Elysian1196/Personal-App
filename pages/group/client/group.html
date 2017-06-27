@@ -1,28 +1,35 @@
 <template name="group">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="groupstyle.css">
+  </head>
   <div class="jumbotron">
     <h1>Group Creater</h1>
     <p>Use this page when you meet a new group of people. If everyone has/creates a profile on this site, you can see if anyone has listed the same interest as you!</p>
   </div>
   {{#if currentUser}}
-    <p>Type in the name of a person you would like to add to the group. </p>
-    <input type="text"  class="js-chatinput" id="group_add" >
-    <br>
-    <button class="btn btn-info btn-large js-chatsubmit" id="gr_submit_1">Add to Group</button>
-    <hr>
-    <ul>
-      <li>Here you would see a list the profile names of the people you entered into the group.</li>
-    </ul>
-    <p>Type in the name of a person you would like to delete from the group. </p>
-    <input type="text"  class="js-chatinput" id="group_delete">
-    <br>
-    <button class="btn btn-info btn-large js-chatsubmit" id="gr_submit_2">Delete from Group</button>
-    <br>
-    <ul>
-      {{#each member in peoplelist}}
-        <li>{{member.name}}</li>
-      {{/each}}
-    </ul>
-    <br>
+    <div class = "group_user">
+      <p>Type in the name of a person you would like to add to the group. </p>
+      <input type="text"  class="js-chatinput" id="group_add" >
+      <br>
+      <br>
+      <button class="btn btn-default btn-large js-chatsubmit" id="gr_submit_1">Add to Group</button>
+      <div class = "group_list">
+        <p>Current Group:</p>
+        <ul>
+          {{#each member in peoplelist}}
+            <li>{{member.name}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        <hr>
+        <p>Type in the name of a person you would like to delete from the group. </p>
+        <input type="text"  class="js-chatinput" id="group_delete">
+        <br>
+        <br>
+        <button class="btn btn-default btn-large js-chatsubmit" id="gr_submit_2">Delete from Group</button>
+        <br>
+        <br>
     <!--
     <input type="checkbox" id="save" name="group-save" value="coding">
     <label for="save">Would you like to save this group for later?</label>
@@ -32,9 +39,9 @@
     <button class="btn btn-info btn-large js-chatsubmit">Add to Group</button>
     <br>
     -->
-    <button class="btn btn-info btn-large js-chatsubmit">Let's see if anyone has anything in common with you!(Don't know how to do this yet)</button>
-    <span class="glyphicon glyphicon-search"></span>
+      <button class="btn btn-default btn-large js-chatsubmit">Let's see if anyone has anything in common with you! (Don't know how to do this yet)</button>
+    </div>
   {{else}}
-    <h2>You must logged in to create a group!</h2>
+    <h2>You must be logged in to create a group!</h2>
   {{/if}}
 </template>

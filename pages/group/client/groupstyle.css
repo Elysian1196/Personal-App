@@ -1,0 +1,14 @@
+.container{
+  background: red;
+}
+.group_user{
+  background: black;
+  margin: 4px;
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 7pt;
+  padding-left: 10px;
+}
+.group_list li{
+  font-size: 200%;
+}
