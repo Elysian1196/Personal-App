@@ -20,7 +20,7 @@ h1, h2, p, li{
   text-align: center;
 }
 img{
-  min-width: 300px;
+  min-width: 280px;
 }
 a{
   color: black;
@@ -53,7 +53,7 @@ a:hover{
   clear:both;
   flex: 10%
 }
-@media all and (max-width: 770px) {
+@media all and (max-width: 610px) {
 
   .picture {
     flex-direction: column;
