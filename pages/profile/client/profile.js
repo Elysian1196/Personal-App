@@ -1,3 +1,7 @@
+Template.profile.onCreated(function(){
+  //this.state = new ReactiveDict();
+  Meteor.subscribe('profiles');
+});
 Template.profile.helpers({
   current_profile() {return Profiles.find({owner: Meteor.userId()})},
 })
