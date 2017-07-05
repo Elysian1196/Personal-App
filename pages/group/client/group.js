@@ -1,3 +1,6 @@
+Template.profile.onCreated(function(){
+  Meteor.subscribe('group');
+})
 Template.group.helpers({
   peoplelist() {return Group.find()},
 })
