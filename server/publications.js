@@ -4,3 +4,6 @@ Meteor.publish('profiles',function(){
 Meteor.publish('group',function(){
   return Group.find();
 })
+Meteor.publish('similarities',function(){
+  return Similarities.find();
+})

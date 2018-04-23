@@ -6,7 +6,7 @@
     <h1>Profile Page</h1>
     <p>Edit your profile settings here. </p>
   </div>
-  {{#if currentUser}}
+  {{#if currentUser}} <!--if we are logged in-->
     <div class = "start">
       <h2>Click here to begin your profile creation or start over!</h2>
       <button class="btn btn-default btn-large js-chatsubmit" id = "new">Let's Begin!</button>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <p></p>
-    <!--
+    <!-- To be added later
     <textarea rows="9" cols="60" placeholder = "Enter profile description here" id = "description"></textarea>
     <br>
     <button class="btn btn-primary btn-large js-chatsubmit">Submit</button>
@@ -67,7 +67,7 @@
       <p>Use the delete button to remove likes on your personal list.</p>
     </div>
     <p></p>
-  {{else}}
+  {{else}}<!-- if we are not logged in-->
     <h2>You must log in to see your profile. </h2>
   {{/if}}
 </template>
